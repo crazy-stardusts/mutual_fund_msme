@@ -1,5 +1,4 @@
 from pydantic_settings import BaseSettings
-import os
 from dotenv import load_dotenv
 
 
@@ -13,3 +12,5 @@ class Settings(BaseSettings):
     DATABASE_DB_USER: str = "postgres"
     DATABASE_PORT: int = 5432
     SECRET_KEY: str = "your-secret-key"
+
+settings = Settings()
