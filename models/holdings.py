@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, Numeric, ForeignKey
+from sqlalchemy import Column, Integer, Numeric, ForeignKey, String
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 
@@ -12,3 +12,4 @@ class Holdings(Base):
     plan_id = Column(Integer, nullable=False, )
     number_of_units = Column(Integer, nullable=False)
     nav = Column(Numeric(precision=10, scale=2), nullable=False)
+    risk_grade = Column(String)
