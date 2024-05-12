@@ -82,3 +82,7 @@ class FundPlan(Base):
     created_at = Column(DateTime(timezone=True), nullable=False)
     updated_at = Column(DateTime(timezone=True), nullable=False)
     nav = Column(Integer, nullable=False)
+    ret_1year = Column(Numeric)
+    ret_3year = Column(Numeric)
+    ret_5year = Column(Numeric)
+    risk_grade = Column(String(20))
