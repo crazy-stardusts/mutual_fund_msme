@@ -81,3 +81,4 @@ class FundPlan(Base):
     minor_investments_allowed = Column(Boolean)
     created_at = Column(DateTime(timezone=True), nullable=False)
     updated_at = Column(DateTime(timezone=True), nullable=False)
+    nav = Column(Integer, nullable=False)
