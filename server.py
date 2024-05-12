@@ -10,7 +10,7 @@ from starlette.middleware.base import BaseHTTPMiddleware
 app = FastAPI()
 
 origins = [
-    "https://angelhack-banglore.vercel.app"
+    "http://localhost:3000"
 ]
 
 app.add_middleware(
