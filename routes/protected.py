@@ -38,3 +38,9 @@ async def get_mutual_fund_by_id(plan_id: int, units: int, current_user: Annotate
 @router.get("/mutual-funds/portfolio")
 async def get_portfolio(current_user: Annotated[User, Depends(get_current_user)], db : Session = Depends(get_db)):
     return db.query(Holdings).filter(Holdings.user_id == current_user.id).all()
+
+@router.get("/loans")
+async def get_loans(current_user: Annotated[User, Depends(get_current_user)], db : Session = Depends(get_db)):
+    holdings = db.query(Holdings).filter(Holdings.user_id == current_user.id).all()
+    total_nav = sum([holding.nav * holding.number_of_units for holding in holdings])
+    return {"loans" : float(total_nav) * 0.8}
